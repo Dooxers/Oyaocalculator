@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oyao Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+
+  <div class="stage">
+
+    <!-- Left side: brand + shortcuts -->
+    <aside class="side info">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">O</span>
+        <div>
+          <h1>Oyao Calculator</h1>
+          <p class="tagline">Fast, clean and keyboard friendly.</p>
+        </div>
+      </div>
+
+      <h2>Shortcuts</h2>
+      <ul class="shortcuts">
+        <li><kbd>0</kbd>–<kbd>9</kbd><span>Type numbers</span></li>
+        <li><kbd>+</kbd><kbd>-</kbd><kbd>*</kbd><kbd>/</kbd><span>Operators</span></li>
+        <li><kbd>%</kbd><span>Percent</span></li>
+        <li><kbd>Enter</kbd><span>Equals</span></li>
+        <li><kbd>Backspace</kbd><span>Delete</span></li>
+        <li><kbd>Esc</kbd><span>Clear all</span></li>
+      </ul>
+    </aside>
+
+    <!-- Center: calculator -->
+    <main class="calc" aria-label="Calculator">
+      <section class="display">
+        <div id="preview" class="preview"></div>
+        <div id="expr" class="main" aria-live="polite">0</div>
+      </section>
+
+      <section class="keys">
+        <button class="key fn" data-action="clear" aria-label="All clear">AC</button>
+        <button class="key fn" data-action="delete" aria-label="Delete">DEL</button>
+        <button class="key fn" data-action="percent" aria-label="Percent">%</button>
+        <button class="key op" data-action="op" data-value="÷" aria-label="Divide">÷</button>
+
+        <button class="key" data-action="digit" data-value="7">7</button>
+        <button class="key" data-action="digit" data-value="8">8</button>
+        <button class="key" data-action="digit" data-value="9">9</button>
+        <button class="key op" data-action="op" data-value="×" aria-label="Multiply">×</button>
+
+        <button class="key" data-action="digit" data-value="4">4</button>
+        <button class="key" data-action="digit" data-value="5">5</button>
+        <button class="key" data-action="digit" data-value="6">6</button>
+        <button class="key op" data-action="op" data-value="−" aria-label="Subtract">−</button>
+
+        <button class="key" data-action="digit" data-value="1">1</button>
+        <button class="key" data-action="digit" data-value="2">2</button>
+        <button class="key" data-action="digit" data-value="3">3</button>
+        <button class="key op" data-action="op" data-value="+" aria-label="Add">+</button>
+
+        <button class="key" data-action="digit" data-value="0">0</button>
+        <button class="key" data-action="dot" aria-label="Decimal point">.</button>
+        <button class="key equals" data-action="equals" aria-label="Equals">=</button>
+      </section>
+    </main>
+
+    <!-- Right side: history -->
+    <aside class="side history">
+      <div class="history-head">
+        <h2>History</h2>
+        <button id="clear-history" class="link-btn" type="button">Clear</button>
+      </div>
+      <p id="history-empty" class="empty">No calculations yet. Press = to save one here.</p>
+      <ul id="history-list" class="history-list"></ul>
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
